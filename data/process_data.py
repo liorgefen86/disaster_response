@@ -60,7 +60,7 @@ def save_data(df: DataFrame, database_filename: str, table_name: str = 'tab') \
     :return: None
     """
     engine = create_engine(f'sqlite:///{database_filename}')
-    df.to_sql(table_name, engine, index=False)
+    df.to_sql(table_name, engine, index=True, if_exists='replace')
 
 
 def main():
