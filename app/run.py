@@ -1,6 +1,6 @@
 import sys
 sys.path.append('.')
-from models.train_classifier import tokenize
+from data_processing.classifier_functions import tokenize
 import json
 import plotly
 import pandas as pd
@@ -19,7 +19,7 @@ table_name = engine.table_names()[0]
 df = pd.read_sql_table(table_name, engine)
 
 # load model
-with open('models/model_dt.joblib', 'rb') as file:
+with open('models/be_dt2.joblib', 'rb') as file:
     model = joblib.load(file)
 
 # index webpage displays cool visuals and receives user input text for model
