@@ -41,3 +41,22 @@ To install the necessary packages:
 3. In your favourite browser, enter below url:
 
 `localhost:3001`
+
+### Project structure:
+- app:
+    - template:
+        - `go.html`: results website page
+        - `master.html`: main website page
+    - `run.py`: contains the code to run Flask server
+- data:
+    - `disaster_categories.csv`: original data file containing message's categories
+    - `disaster_messages.csv`: original data file containing messages
+    - `DisasterResponse.db`: cleaned database after ETL
+- data_processing:
+    - `classifier_functions.py`: contains the functions used for GridSearch
+    - `process_data.py`: contains ETL pipeline and the main function to run it
+- models:
+    - `be_dt.joblib`: best estimator from a GridSearch on a DecisionTree classifier
+    - `be_rf.joblib`: best estimator from a GridSearch on a RandomForest classifier 
+- `train_classifier.py`: module used to run ResearchGrid on a specific classifier
+- `requirements.txt`: includes a list of all necessary packages
