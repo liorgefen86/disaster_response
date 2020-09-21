@@ -49,8 +49,11 @@ def main():
             message = f'Model used: AdaBoost\n'
             classifier = AdaBoostClassifier()
             cls_params = {
-                'cls__estimator__base_estimator': [DecisionTreeClassifier(),
-                                                   RandomForestClassifier()],
+                'cls__estimator__base_estimator': [DecisionTreeClassifier(
+                    max_depth=1
+                ), RandomForestClassifier(
+                    max_depth=1
+                )],
                 'cls__estimator__n_estimators': [25, 50, 100],
             }
         elif classifier.lower() == 'dt':
